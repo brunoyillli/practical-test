@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
@@ -39,7 +38,7 @@ public class Customer {
 	@Email
 	private String email;
 
-    @JoinColumn(name = "id_endereco")
-    @ManyToMany(cascade=CascadeType.PERSIST)
+	@JoinColumn(name = "id_endereco")
+	@ManyToMany(cascade = CascadeType.PERSIST)
 	private List<Endereco> endereco;
 }
